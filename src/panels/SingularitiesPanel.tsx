@@ -127,7 +127,7 @@ function detNxN(m: number[][], n: number): number {
 
 export function SingularitiesPanel() {
   const { nodes, updateNode } = useScene()
-  const { numericCols, symConditions, detFormula, detValue, jointIds } = useJacobianData()
+  const { numericCols, symConditions, detValue, jointIds } = useJacobianData()
 
   const isSingular = Math.abs(detValue) < 1e-4
 

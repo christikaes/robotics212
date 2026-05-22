@@ -120,9 +120,6 @@ function symCross(a: SymVec3, b: SymVec3): SymVec3 {
   ]
 }
 
-function symDot(a: SymVec3, b: SymVec3): SymExpr {
-  return symAdd(symAdd(symMul(a[0], b[0]), symMul(a[1], b[1])), symMul(a[2], b[2]))
-}
 
 // ─── Symbolic determinant ─────────────────────────────────────────────────────
 
@@ -563,10 +560,6 @@ function solveFactorEqualsZero(factor: SymExpr, _vars: string[]): SingularCondit
 
 // ─── Utility functions ────────────────────────────────────────────────────────
 
-function removeOne(parts: string[], label: string): string[] {
-  const i = parts.indexOf(label)
-  return i < 0 ? parts : [...parts.slice(0, i), ...parts.slice(i + 1)]
-}
 
 function partsEqual(a: string[], b: string[]): boolean {
   if (a.length !== b.length) return false
